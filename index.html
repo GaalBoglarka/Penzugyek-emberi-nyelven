@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pénzügyi Tanácsadás - Emberi Nyelven</title>
+
+<!-- GOOGLE FONTS: Modern, geometriai Plus Jakarta Sans betűtípus behívása kiterjesztett latin ékezetekkel -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&subset=latin-ext&display=swap" rel="stylesheet">
+
+<style>
+/* MODERNEBB & PRÉMIUMABB SZÍNPALETTA */
+:root {
+--primary-bg: #FCF9F2; /* Világos, tiszta krém háttér */
+--dark-text: #2D1A10; /* Elegáns mélybarna a szövegeknek */
+--accent-gold: #C0A473; /* Matt arany / pezsgő a gomboknak */
+--accent-gold-hover: #A88E60;
+--white-bg: #ffffff; /* Hófehér a kártyák kiemeléséhez */
+--card-shadow: 0 10px 30px rgba(45, 26, 16, 0.05); /* Lágy, modern árnyék */
+--card-shadow-hover: 0 20px 40px rgba(45, 26, 16, 0.1);
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+margin: 0;
+padding: 0;
+color: var(--dark-text);
+background-color: var(--primary-bg);
+line-height: 1.7;
+-webkit-font-smoothing: antialiased;
+}
+
+.container {
+width: 88%;
+max-width: 1140px;
+margin: 0 auto;
+}
+
+/* Navigációs sáv - Letisztult, lebegő hatás */
+.navbar {
+background-color: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border-bottom: 1px solid rgba(45, 26, 16, 0.05);
+padding: 18px 0;
+position: sticky;
+top: 0;
+z-index: 100;
+}
+
+.navbar .container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-weight: 800;
+font-size: 1.2rem;
+color: var(--dark-text);
+text-decoration: none;
+letter-spacing: -0.5px;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.nav-links li {
+margin-left: 30px;
+}
+
+.nav-links a {
+text-decoration: none;
+color: var(--dark-text);
+font-weight: 600;
+font-size: 0.95rem;
+opacity: 0.8;
+transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+opacity: 1;
+}
+
+/* Hero szekció - Lágy színátmenettel */
+.hero {
+padding: 130px 0 110px 0;
+text-align: center;
+background: linear-gradient(180deg, rgba(242,233,216,0.4) 0%, rgba(252,249,242,0) 100%);
+}
+
+.hero h1 {
+font-size: 3.4rem;
+font-weight: 800;
+color: var(--dark-text);
+line-height: 1.25;
+margin-bottom: 24px;
+margin-top: 0;
+letter-spacing: -1.5px;
+}
+
+.hero p {
+font-size: 1.25rem;
+max-width: 720px;
+margin: 0 auto 40px auto;
+color: var(--dark-text);
+opacity: 0.85;
+font-weight: 400;
+}
+
+/* Gombok */
+.btn {
+display: inline-block;
+background-color: var(--accent-gold);
+color: #ffffff;
+padding: 16px 38px;
+text-decoration: none;
+font-weight: 600;
+border-radius: 50px;
+transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+box-shadow: 0 4px 15px rgba(192, 164, 115, 0.3);
+border: none;
+cursor: pointer;
+font-size: 1rem;
+letter-spacing: -0.2px;
+}
+
+.btn:hover {
+transform: translateY(-2px);
+background-color: var(--accent-gold-hover);
+box-shadow: 0 8px 25px rgba(192, 164, 115, 0.4);
+}
+
+/* Probléma / Megoldás */
+.intro {
+padding: 90px 0;
+text-align: center;
+}
+
+.intro h2 {
+font-size: 2.3rem;
+font-weight: 700;
+letter-spacing: -0.8px;
+margin-bottom: 15px;
+}
+
+.features {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-top: 50px;
+}
+
+.feature-box {
+flex: 1;
+min-width: 280px;
+margin: 15px;
+padding: 40px 30px;
+background-color: var(--white-bg);
+border-radius: 16px;
+box-shadow: var(--card-shadow);
+transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-box:hover {
+transform: translateY(-6px);
+box-shadow: var(--card-shadow-hover);
+}
+
+.feature-box h3 {
+font-size: 1.3rem;
+font-weight: 700;
+margin-top: 0;
+margin-bottom: 15px;
+letter-spacing: -0.4px;
+}
+
+.feature-box p {
+font-size: 0.95rem;
+opacity: 0.8;
+margin: 0;
+}
+
+/* Szolgáltatások */
+.services {
+padding: 100px 0;
+background-color: var(--white-bg);
+}
+
+.services-grid {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.service-card {
+flex: 1;
+min-width: 45%;
+margin: 15px;
+padding: 40px;
+background: var(--primary-bg);
+border-radius: 20px;
+transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+cursor: pointer;
+position: relative;
+border: 1px solid rgba(45, 26, 16, 0.03);
+text-align: left;
+}
+
+.service-card:hover {
+background-color: #F5EFE4;
+transform: translateY(-4px);
+}
+
+.service-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.service-header h3 {
+font-size: 1.4rem;
+font-weight: 700;
+margin: 0;
+letter-spacing: -0.5px;
+}
+
+.toggle-icon {
+font-size: 1.2rem;
+color: var(--accent-gold);
+transition: transform 0.3s ease;
+font-weight: bold;
+}
+
+.service-card.active .toggle-icon {
+transform: rotate(180deg);
+}
+
+.service-card p.intro-text {
+margin: 0 0 15px 0;
+opacity: 0.85;
+}
+
+.service-details {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+opacity: 0;
+border-top: 1px solid rgba(45, 26, 16, 0.08);
+padding-top: 0;
+margin-top: 0;
+}
+
+.service-card.active .service-details {
+max-height: 700px;
+opacity: 1;
+padding-top: 20px;
+margin-top: 15px;
+}
+
+.service-details ul {
+padding-left: 20px;
+margin: 0;
+}
+
+.service-details li {
+margin-bottom: 10px;
+font-size: 0.95rem;
+opacity: 0.9;
+}
+
+.service-details strong {
+color: var(--dark-text);
+}
+
+/* Magyarázat rész */
+.explanation {
+padding: 90px 0;
+text-align: center;
+}
+
+.explanation h2 {
+font-size: 2.1rem;
+font-weight: 700;
+margin-bottom: 20px;
+letter-spacing: -0.5px;
+}
+
+.explanation p {
+font-size: 1.1rem;
+opacity: 0.8;
+}
+
+/* Kapcsolati űrlap */
+.contact {
+background-color: var(--dark-text);
+color: #ffffff;
+padding: 100px 0;
+text-align: center;
+}
+
+.contact h2 {
+font-size: 2.5rem;
+font-weight: 700;
+letter-spacing: -0.8px;
+margin-top: 0;
+}
+
+.contact p {
+opacity: 0.7;
+font-size: 1.1rem;
+}
+
+.contact form {
+max-width: 550px;
+margin: 45px auto 0 auto;
+text-align: left;
+}
+
+.form-group {
+margin-bottom: 24px;
+}
+
+.form-group label {
+display: block;
+margin-bottom: 9px;
+font-weight: 600;
+color: var(--accent-gold);
+font-size: 0.85rem;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.contact input, .contact select, .contact textarea {
+width: 100%;
+padding: 16px;
+border-radius: 12px;
+border: 1px solid rgba(255, 255, 255, 0.15);
+background-color: rgba(255, 255, 255, 0.05);
+color: #ffffff;
+box-sizing: border-box;
+font-family: inherit;
+font-size: 1rem;
+transition: all 0.3s ease;
+-webkit-appearance: none;
+appearance: none;
+}
+
+.contact input:focus, .contact select:focus, .contact textarea:focus {
+outline: none;
+border-color: var(--accent-gold);
+background-color: rgba(255, 255, 255, 0.08);
+}
+
+.select-wrapper {
+position: relative;
+}
+
+.select-wrapper::after {
+content: "↓";
+font-size: 1rem;
+color: var(--accent-gold);
+right: 18px;
+top: 14px;
+position: absolute;
+pointer-events: none;
+}
+
+/* JAVÍTOTT ÁSZF RUBLIKA STÍLUS */
+.checkbox-group {
+display: flex;
+align-items: flex-start;
+margin-top: 20px;
+margin-bottom: 25px;
+gap: 12px; /* Biztosítja a tiszta távolságot a négyzet és a szöveg között */
+}
+
+.checkbox-group input[type="checkbox"] {
+width: 20px;
+height: 20px;
+margin: 2px 0 0 0;
+cursor: pointer;
+flex-shrink: 0; /* Megakadályozza, hogy a jelölőnégyzet összenyomódjon */
+-webkit-appearance: checkbox; /* Visszaállítja a natív checkbox működést */
+appearance: checkbox;
+}
+
+.checkbox-group label {
+text-transform: none;
+font-size: 0.9rem;
+font-weight: 400;
+color: rgba(255, 255, 255, 0.8);
+letter-spacing: 0;
+line-height: 1.5;
+cursor: pointer;
+margin-bottom: 0;
+display: inline;
+}
+
+.checkbox-group a {
+color: var(--accent-gold);
+text-decoration: none;
+font-weight: 600;
+position: relative;
+z-index: 5; /* Biztosítja, hogy a link kattintható maradjon */
+}
+
+.checkbox-group a:hover {
+text-decoration: underline;
+}
+
+.contact button {
+background-color: var(--accent-gold);
+color: #ffffff;
+border: none;
+padding: 18px 40px;
+font-weight: 600;
+font-size: 1.05rem;
+cursor: pointer;
+border-radius: 50px;
+width: 100%;
+transition: all 0.3s ease;
+box-shadow: 0 4px 15px rgba(192, 164, 115, 0.2);
+font-family: inherit;
+}
+
+.contact button:hover {
+background-color: var(--accent-gold-hover);
+transform: translateY(-2px);
+}
+
+/* Modern lábléc */
+.main-footer {
+background-color: #1F110A;
+color: rgba(255, 255, 255, 0.6);
+padding: 60px 0 30px 0;
+font-size: 0.9rem;
+}
+
+.footer-grid {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+margin-bottom: 40px;
+}
+
+.footer-col {
+flex: 1;
+min-width: 250px;
+margin: 15px;
+}
+
+.footer-col h4 {
+color: #ffffff;
+margin-top: 0;
+margin-bottom: 20px;
+font-size: 1.05rem;
+font-weight: 600;
+letter-spacing: -0.3px;
+}
+
+.footer-col p {
+margin: 10px 0;
+}
+
+.footer-col a {
+color: rgba(255, 255, 255, 0.6);
+text-decoration: none;
+transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+color: var(--accent-gold);
+}
+
+.footer-legal {
+text-align: center;
+padding-top: 25px;
+border-top: 1px solid rgba(255, 255, 255, 0.05);
+font-size: 0.8rem;
+opacity: 0.7;
+}
+
+/* Reszponzív nézet */
+@media (max-width: 768px) {
+.navbar .container {
+flex-direction: column;
+gap: 12px;
+}
+.nav-links li {
+margin: 0 12px;
+}
+.hero h1 {
+font-size: 2.4rem;
+}
+.service-card {
+min-width: 100%;
+margin: 10px 0;
+padding: 30px;
+}
+.features {
+margin-top: 20px;
+}
+.feature-box {
+margin: 10px 0;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGÁCIÓ -->
+<nav class="navbar">
+<div class="container">
+<a href="#" class="logo">Pénzügyek Emberi Nyelven</a>
+<ul class="nav-links">
+<li><a href="#rolam">Miért én?</a></li>
+<li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+<li><a href="#miert-dijmentes">Miért díjmentes?</a></li>
+<li><a href="#kapcsolat">Időpontfoglalás</a></li>
+</ul>
+</div>
+</nav>
+
+<main>
+<!-- HERO SZEKCIÓ -->
+<header class="hero">
+<div class="container">
+<h1>Pénzügyek, emberi nyelven.<br>Hogy a döntései valóban Önt szolgálják.</h1>
+<p>Nem a bankokat vagy a biztosítókat képviselem, hanem Önt. Független tanácsadóként a teljes hazai piac kínálatából keressük meg azt a megoldást, ami a leginkább passzol az élethelyzetéhez.</p>
+<a href="#kapcsolat" class="btn">Beszéljük meg</a>
+</div>
+</header>
+
+<!-- PROBLÉMA / MEGOLDÁS -->
+<section class="intro" id="rolam">
+<div class="container">
+<h2>Önnek is ismerős ez a helyzet?</h2>
+<p style="max-width: 750px; margin: 0 auto; opacity: 0.8;">Amikor az ember bemegy egy bankba, gyakran úgy érzi, mintha egy idegen nyelvet beszélnének. Ráadásul minden intézmény a saját termékét tartja a legjobbnak. Ezt a terhet veszem le a válláról.</p>
+
+<div class="features">
+<div class="feature-box">
+<h3>Nem kell 10 helyre besétálnia</h3>
+<p>Ismerem az összes hazai pénzintézet aktuális ajánlatait. Önnek csak velem kell egyeztetnie.</p>
+</div>
+<div class="feature-box">
+<h3>Valóban független nézőpont</h3>
+<p>Nem vagyok elköteleződve egyik bank, biztosító vagy pénztár felé sem. Teljesen függetlenül tudom vizsgálni a piac minden szereplőjét, hogy Ön a legjobban járjon.</p>
+</div>
+<div class="feature-box">
+<h3>Végigkísérem a folyamaton</h3>
+<p>A dokumentumok beszerzésében és az ügyintézés útvesztőiben is Ön mellett állok – a legelejétől a végéig.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SZOLGÁLTATÁSOK -->
+<section class="services" id="szolgaltatasok">
+<div class="container">
+<h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 20px;">Miben tudok segíteni?</h2>
+<p style="text-align: center; opacity: 0.7; margin-bottom: 50px;">Kattintson a kártyákra a részletek megtekintéséhez!</p>
+
+<div class="services-grid">
+<!-- Lakossági Pénzügyek -->
+<div class="service-card" onclick="toggleService(this)">
+<div class="service-header">
+<h3>🏠 Magán & Családi ügyek</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<p><strong>Hogy a családi kassza mindig biztonságban legyen.</strong></p>
+<p class="intro-text">Segítek tető alá hozni a lakáshitelt, megszerzem az állami támogatásokat, lefaragom a felesleges banki költségeket, and kiaknázom a házasoknak járó adókedvezményeket.</p>
+
+<div class="service-details">
+<ul>
+<li><strong>Otthonteremtés és Támogatások:</strong> A CSOK+, Babaváró, az <strong>Otthon Start Program (OSP) hitel</strong> és a piaci lakáshitelek teljes körű intézése, hogy minden elérhető forrást maximálisan kihasználjunk.</li>
+<li><strong>Első házasok adókedvezménye:</strong> Segítek átlátni és zökkenőmentesen visszaigényelni a friss házasoknak járó állami adókönnyítéseket, hogy több maradjon a közös kasszában.</li>
+<li><strong>Hitelkiváltás:</strong> Ha van régebbi, drága hitele, megnézzük, hogyan tudjuk azt lecserélni egy sokkal olcsóbb, fixebb havidíjúra.</li>
+<li><strong>Mindennapi Bankszámlák:</strong> Átnézzük a költési szokásait, és lenyessük a felesleges havidíjakat, utalási sarcolásokat. Olyan számlákiemelést keresünk, ami Önnek spórol.</li>
+<li><strong>Gyors segítség (Személyi kölcsönök):</strong> Ha autóvásárlásra, felújításra vagy hirtelen jött kiadásra kell pénz, megtaláljuk a legkedvezőbb kamatú, rejtett buktatók nélküli megoldást.</li>
+<li><strong>A család és az értékek védelme:</strong> Olyan élet-, egészség- és lakásbiztosítást rakunk össze, ami egy váratlan helyzetben tényleg kifizeti a számlákat.</li>
+</ul>
+</div>
+</div>
+
+<!-- Vállalati Pénzügyek -->
+<div class="service-card" onclick="toggleService(this)">
+<div class="service-header">
+<h3>💼 Céges & Vállalkozói ügyek</h3>
+<span class="toggle-icon">▼</span>
+</div>
+<p><strong>Hogy Ön a növekedésre és a munkájára figyelhessen.</strong></p>
+<p class="intro-text">Támogatom a vállalkozását a legjobb céges számlacsomagok megtalálásában, elintézem a cégre szabott felelősségbiztosításokat, valamint menedzselem a komplett társasház-biztosításokat is.</p>
+
+<div class="service-details">
+<ul>
+<li><strong>Olcsóbb céges bankszámlák & POS terminálok:</strong> Versenyeztetjük a bankokat a cég utalási forgalma alapján. Megkeressük a legkisebb költségű számlát és a legkedvezőbb kártyaelfogadási (POS) feltételeket.</li>
+<li><strong>Társasház-biztosítások:</strong> Meglévő és új társasházak teljes körű biztosítási átvilágítása és optimalizálása, hogy a közösség épülete és értékei a legjobb feltételekkel legyenek védve.</li>
+<li><strong>Céges biztonság:</strong> Felelősségbiztosítások szakmára vagy cégvezetőkre, a telephely és a gépek védelme, valamint a céges autók (flották) kedvező biztosítása.</li>
+<li><strong>Dolgozói gondoskodás (Kulcsember programok):</strong> Olyan adóoptimalizált juttatási csomagokat (pl. céges egészségbiztosítást) építünk fel, amivel könnyebb megtartani a jó munkaerőt.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MIÉRT DÍJMENTES -->
+<section class="explanation" id="miert-dijmentes">
+<div class="container" style="max-width: 750px;">
+<h2>Miért díjmentes ez Önnek?</h2>
+<p>Nincs csapda, és nincsenek utólagos sikerdíjak sem. Az én munkámat a pénzintézetek finanszírozzák jutalék formájában, amiért elvégzem helyettük az adminisztráció nagy részét. Önnek ez a szolgáltatás teljesen díjmentes, viszont cserébe kap egy elkötelezett szakértőt, ami az Ön érdekeit védi.</p>
+</div>
+</section>
+
+<!-- KAPCSOLAT ÉS IDŐPONTFOGLALÓ -->
+<section class="contact" id="kapcsolat">
+<div class="container">
+<h2>Tegyünk egy próbát?</h2>
+<p>Válassza ki az Önt érdeklő témát, és kérjen egy kötetlen konzultációs időpontot.</p>
+
+<form action="#" method="POST">
+<div class="form-group">
+<label for="topic">Milyen témában kér időpontot?</label>
+<div class="select-wrapper">
+<select id="topic" name="topic" required>
+<option value="" disabled selected style="color: #333;">Válasszon témakört...</option>
+<option value="lakashitel" style="color: #333;">🏠 Lakáshitel, CSOK+ és OSP ügyintézés</option>
+<option value="szemelyi-kolcson" style="color: #333;">💰 Személyi kölcsön / Szabad felhasználás</option>
+<option value="biztositas" style="color: #333;">🛡️ Családi / Vagyonbiztosítás és Adókedvezmények</option>
+<option value="lakossagi-szamla" style="color: #333;">💳 Lakossági bankszámla optimalizálás</option>
+<option value="tarsashaz-ceg" style="color: #333;">🏢 Társasház-biztosítás / Céges védelem</option>
+<option value="ceges-szamla" style="color: #333;">💳 Kedvezőbb céges bankszámla</option>
+<option value="egyeb" style="color: #333;">☕ Egyéb pénzügyi átvilágítás</option>
+</select>
+</div>
+</div>
+
+<div class="form-group">
+<label for="name">Az Ön neve</label>
+<input type="text" id="name" name="name" placeholder="Pl. Kiss János" required>
+</div>
+
+<div class="form-group">
+<label for="email">E-mail címe</label>
+<input type="email" id="email" name="email" placeholder="pelda@email.hu" required>
+</div>
+
+<div class="form-group">
+<label for="phone">Telefonszáma</label>
+<input type="tel" id="phone" name="phone" placeholder="Pl. +36 30 123 4567">
+</div>
+
+<div class="form-group">
+<label for="message">Megjegyzés / Egyéb részlet (Opcionális)</label>
+<textarea id="message" name="message" rows="4" placeholder="Ha van konkrét elképzelése vagy kérdése, itt leírhatja..."></textarea>
+</div>
+
+<!-- JAVÍTOTT ÁSZF RUBLIKA -->
+<div class="checkbox-group">
+<input type="checkbox" id="aszf" name="aszf" required>
+<label for="aszf">Elolvastam és elfogadom az <a href="https://www.ovb.hu/szerviz/adatkezelesi-szabalyzat.html" target="_blank">Adatkezelési Tájékoztatót</a>, hozzájárulok az adataim kezeléséhez.</label>
+</div>
+
+<button type="submit">Konzultációt kérek</button>
+</form>
+</div>
+</section>
+</main>
+
+<!-- LÁBLÉC -->
+<footer class="main-footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-col">
+<h4>Kapcsolat</h4>
+<p>📧 Email: <a href="mailto:gaalbogi03@gmail.com">gaalbogi03@gmail.com</a></p>
+<p>📞 Telefon: <a href="tel:+36703040084">+36 70 304 0084</a></p>
+<p>📍 Iroda: Személyes egyeztetés online vagy előre megbeszélt helyszínen.</p>
+</div>
+<div class="footer-col">
+<h4>Menüpontok</h4>
+<p><a href="#rolam">Miért én?</a></p>
+<p><a href="#szolgaltatasok">Szolgáltatások</a></p>
+<p><a href="#miert-dijmentes">Miért díjmentes?</a></p>
+<p><a href="#kapcsolat">Időpontfoglalás</a></p>
+</div>
+<div class="footer-col">
+<h4>Jogi státusz</h4>
+<p>Független pénzügyi közvetítőként az MNB felügyelete alá tartozó partnerekkel dolgozom. A tanácsadás során a mindenkori jogszabályi előírásoknak megfelelően járok el.</p>
+</div>
+</div>
+
+<div class="footer-legal">
+<p>&copy; 2026 Pénzügyek Emberi Nyelven. Minden jog fenntartva. | <a href="https://www.ovb.hu/szerviz/adatkezelesi-szabalyzat.html" target="_blank">Adatkezelési Tájékoztató</a></p>
+</div>
+</div>
+</footer>
+
+<!-- INTERAKTÍV JAVASCRIPT A LENYÍLÓS MODULHOZ -->
+<script>
+function toggleService(card) {
+const allCards = document.querySelectorAll('.service-card');
+const isActive = card.classList.contains('active');
+
+// Az összes többi kártya becsukása, hogy egyszerre csak egy lehessen nyitva
+allCards.forEach(c => c.classList.remove('active'));
+
+// Ha a kattintott kártya nem volt aktív, akkor kinyitjuk
+if (!isActive) {
+card.classList.add('active');
+}
+}
+</script>
+
+</body>
+</html>
