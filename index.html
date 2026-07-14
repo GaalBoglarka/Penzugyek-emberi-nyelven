@@ -209,6 +209,60 @@ background-color: var(--accent-gold-hover);
 box-shadow: 0 8px 25px rgba(192, 164, 115, 0.4);
 }
 
+/* Rólam */
+.about {
+padding: 100px 0;
+background-color: var(--white-bg);
+}
+
+.about-grid {
+display: flex;
+align-items: center;
+gap: 60px;
+}
+
+.about-image {
+flex: 0 0 340px;
+}
+
+.about-image img {
+width: 100%;
+display: block;
+border-radius: 20px;
+box-shadow: var(--card-shadow-hover);
+}
+
+.about-text {
+flex: 1;
+}
+
+.about-eyebrow {
+display: block;
+color: var(--accent-gold);
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 1.5px;
+font-size: 0.85rem;
+margin-bottom: 10px;
+}
+
+.about-text h2 {
+font-size: 2rem;
+font-weight: 700;
+letter-spacing: -0.6px;
+margin: 0 0 22px 0;
+}
+
+.about-text p {
+opacity: 0.85;
+margin-bottom: 16px;
+font-size: 1.05rem;
+}
+
+.about-text p:last-child {
+margin-bottom: 0;
+}
+
 /* Probléma / Megoldás */
 .intro {
 padding: 90px 0;
@@ -584,6 +638,19 @@ opacity: 0.7;
 
 /* Reszponzív nézet */
 @media (max-width: 768px) {
+.about-grid {
+flex-direction: column;
+gap: 30px;
+text-align: center;
+}
+.about-image {
+flex: none;
+max-width: 240px;
+margin: 0 auto;
+}
+.about-text h2 {
+font-size: 1.6rem;
+}
 .navbar .container {
 flex-direction: row;
 justify-content: space-between;
@@ -667,8 +734,23 @@ margin: 10px 0;
 </div>
 </header>
 
+<!-- RÓLAM -->
+<section class="about" id="rolam">
+<div class="container about-grid">
+<div class="about-image">
+<img src="images/rolam-boglarka.jpg" alt="Gaál Boglárka, független pénzügyi tanácsadó">
+</div>
+<div class="about-text">
+<span class="about-eyebrow">Miért én?</span>
+<h2>Gaál Boglárka vagyok, független pénzügyi tanácsadó</h2>
+<p>Szia! Sokan úgy gondolnak a pénzre, mint rideg számokra és bonyolult táblázatokra. Én eszköznek látom: valaminek, ami elviszi Önt oda, ahová el szeretne jutni — legyen szó az első saját otthon megvásárlásáról, a családja hosszú távú biztonságáról, vagy a vállalkozása magabiztos növekedéséről.</p>
+<p>Tudatosan nem szakosodtam egyetlen szűk területre sem, mert hiszem, hogy a valódi pénzügyi biztonságot csak a teljes képet átlátva lehet felépíteni. Szinte minden élethelyzetre van jó megoldás a pénzügyek világában — az én dolgom, hogy ezt megtaláljam Önnek.</p>
+</div>
+</div>
+</section>
+
 <!-- PROBLÉMA / MEGOLDÁS -->
-<section class="intro" id="rolam">
+<section class="intro" id="helyzetfelismeres">
 <div class="container">
 <h2>Önnek is ismerős ez a helyzet?</h2>
 <p style="max-width: 750px; margin: 0 auto; opacity: 0.8;">Amikor az ember bemegy egy bankba, gyakran úgy érzi, mintha egy idegen nyelvet beszélnének. Ráadásul minden intézmény a saját termékét tartja a legjobbnak. Ezt a terhet veszem le a válláról.</p>
