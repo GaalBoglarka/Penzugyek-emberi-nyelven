@@ -446,6 +446,62 @@ font-size: 1.1rem;
 opacity: 0.8;
 }
 
+/* Hogyan dolgozunk együtt */
+.process {
+padding: 100px 0;
+background-color: var(--white-bg);
+}
+
+.process-steps {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 30px;
+}
+
+.process-step {
+flex: 1;
+min-width: 260px;
+display: flex;
+gap: 20px;
+}
+
+.process-number {
+flex-shrink: 0;
+width: 44px;
+height: 44px;
+border-radius: 50%;
+background-color: var(--accent-gold);
+color: #ffffff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+font-size: 1.1rem;
+}
+
+.process-step h3 {
+font-size: 1.15rem;
+font-weight: 700;
+margin: 6px 0 10px 0;
+letter-spacing: -0.3px;
+}
+
+.process-step p {
+font-size: 0.95rem;
+opacity: 0.85;
+margin: 0;
+}
+
+.process-quote {
+margin: 60px 0 0 0;
+padding: 0 0 0 24px;
+border-left: 3px solid var(--accent-gold);
+font-size: 1.2rem;
+font-style: italic;
+opacity: 0.9;
+}
+
 /* Kapcsolati űrlap */
 .contact {
 background-color: var(--dark-text);
@@ -743,8 +799,8 @@ margin: 10px 0;
 <div class="about-text">
 <span class="about-eyebrow">Miért én?</span>
 <h2>Gaál Boglárka vagyok, független pénzügyi tanácsadó</h2>
-<p>Szia! Sokan úgy gondolnak a pénzre, mint rideg számokra és bonyolult táblázatokra. Én eszköznek látom: valaminek, ami elviszi Önt oda, ahová el szeretne jutni — legyen szó az első saját otthon megvásárlásáról, a családja hosszú távú biztonságáról, vagy a vállalkozása magabiztos növekedéséről.</p>
-<p>Tudatosan nem szakosodtam egyetlen szűk területre sem, mert hiszem, hogy a valódi pénzügyi biztonságot csak a teljes képet átlátva lehet felépíteni. Szinte minden élethelyzetre van jó megoldás a pénzügyek világában — az én dolgom, hogy ezt megtaláljam Önnek.</p>
+<p>Szia! Sokan úgy gondolnak a pénzre, mint rideg számokra és bonyolult táblázatokra. Én eszköznek látom: valaminek, ami elviszi Önt oda, ahová el szeretne jutni, legyen szó az első saját otthon megvásárlásáról, a családja hosszú távú biztonságáról vagy a vállalkozása magabiztos növekedéséről.</p>
+<p>Tudatosan nem szakosodtam egyetlen szűk területre sem, mert hiszem, hogy a valódi pénzügyi biztonságot csak a teljes képet átlátva lehet felépíteni. Szinte minden élethelyzetre van jó megoldás a pénzügyek világában, az én dolgom, hogy ezt megtaláljam Önnek.</p>
 </div>
 </div>
 </section>
@@ -786,7 +842,7 @@ margin: 10px 0;
 <span class="toggle-icon">▼</span>
 </div>
 <p><strong>Hogy a családi kassza mindig biztonságban legyen.</strong></p>
-<p class="intro-text">Segítek tető alá hozni a lakáshitelt, megszerzem az állami támogatásokat, lefaragom a felesleges banki költségeket, and kiaknázom a házasoknak járó adókedvezményeket.</p>
+<p class="intro-text">Segítek tető alá hozni a lakáshitelt, megszerzem az állami támogatásokat, lefaragom a felesleges banki költségeket, és kiaknázom a házasoknak járó adókedvezményeket.</p>
 
 <div class="service-details">
 <ul>
@@ -867,7 +923,7 @@ margin: 10px 0;
 </div>
 <div class="service-details">
 <p>Akik szülőként pontosan értik, hogy a család anyagi védelmét nem bízhatják a véletlenre.</p>
-<p><strong>Gyermekek jövőjéért:</strong> hosszú távú megtakarítási tervet is építünk, hogy gyermeke jövője már ma biztos alapokon álljon.</p>
+<p>Gyermekek jövőjéért hosszú távú megtakarítási tervet is építünk, hogy gyermeke jövője már ma biztos alapokon álljon.</p>
 </div>
 </div>
 
@@ -899,6 +955,39 @@ margin: 10px 0;
 <div class="container" style="max-width: 750px;">
 <h2>Miért díjmentes ez Önnek?</h2>
 <p>Nincs csapda, és nincsenek utólagos sikerdíjak sem. Az én munkámat a pénzintézetek finanszírozzák jutalék formájában, amiért elvégzem helyettük az adminisztráció nagy részét. Önnek ez a szolgáltatás teljesen díjmentes, viszont cserébe kap egy elkötelezett szakértőt, ami az Ön érdekeit védi.</p>
+</div>
+</section>
+
+<!-- HOGYAN DOLGOZUNK EGYÜTT -->
+<section class="process">
+<div class="container" style="max-width: 900px;">
+<h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 50px;">Hogyan dolgozunk együtt?</h2>
+
+<div class="process-steps">
+<div class="process-step">
+<span class="process-number">1</span>
+<div>
+<h3>Igényfelmérés</h3>
+<p>Megismerjük egymást, te elmondod a céljaidat, én pedig felmérem az aktuális helyzetet.</p>
+</div>
+</div>
+<div class="process-step">
+<span class="process-number">2</span>
+<div>
+<h3>Piaci elemzés</h3>
+<p>Elvégzem a kutatómunkát, összehasonlítom a lehetőségeket a teljes piacon.</p>
+</div>
+</div>
+<div class="process-step">
+<span class="process-number">3</span>
+<div>
+<h3>Döntés és megvalósítás</h3>
+<p>Átláthatóan, szakzsargon nélkül bemutatom a lehetőségeket. Te döntesz, én pedig végigviszem a teljes adminisztrációt.</p>
+</div>
+</div>
+</div>
+
+<blockquote class="process-quote">„A célom az, hogy a beszélgetésünk után, azt érezd: végre valaki átláthatóan és érthetően elmagyarázta, mi történik a pénzeddel.”</blockquote>
 </div>
 </section>
 
