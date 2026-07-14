@@ -4,6 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pénzügyi Tanácsadás - Emberi Nyelven</title>
+<meta name="description" content="Független pénzügyi tanácsadás díjmentesen: lakáshitel, CSOK+, biztosítás, megtakarítás és céges pénzügyek egy helyen, emberi nyelven elmagyarázva.">
+
+<!-- MEGOSZTÁSI ELŐNÉZET (OPEN GRAPH) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pénzügyek, emberi nyelven | Pénzügyi Tanácsadás">
+<meta property="og:description" content="Független pénzügyi tanácsadás díjmentesen: lakáshitel, CSOK+, biztosítás, megtakarítás és céges pénzügyek egy helyen, emberi nyelven elmagyarázva.">
+<meta property="og:image" content="https://gaalbogi03-ui.github.io/Bogi-weboldal/images/hero-bg.jpg">
+<meta property="og:url" content="https://gaalbogi03-ui.github.io/Bogi-weboldal/">
+<meta property="og:locale" content="hu_HU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pénzügyek, emberi nyelven | Pénzügyi Tanácsadás">
+<meta name="twitter:description" content="Független pénzügyi tanácsadás díjmentesen: lakáshitel, CSOK+, biztosítás, megtakarítás és céges pénzügyek egy helyen, emberi nyelven elmagyarázva.">
+<meta name="twitter:image" content="https://gaalbogi03-ui.github.io/Bogi-weboldal/images/hero-bg.jpg">
 
 <!-- GOOGLE FONTS: Modern, geometriai Plus Jakarta Sans betűtípus behívása kiterjesztett latin ékezetekkel -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,6 +71,41 @@ z-index: 100;
 display: flex;
 justify-content: space-between;
 align-items: center;
+position: relative;
+}
+
+.nav-toggle {
+display: none;
+flex-direction: column;
+justify-content: space-between;
+width: 26px;
+height: 18px;
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+z-index: 110;
+}
+
+.nav-toggle span {
+display: block;
+height: 2px;
+width: 100%;
+background-color: var(--dark-text);
+border-radius: 2px;
+transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+transform: translateY(-8px) rotate(-45deg);
 }
 
 .logo {
@@ -517,11 +565,33 @@ opacity: 0.7;
 /* Reszponzív nézet */
 @media (max-width: 768px) {
 .navbar .container {
+flex-direction: row;
+justify-content: space-between;
+}
+.nav-toggle {
+display: flex;
+}
+.nav-links {
+display: none;
+position: absolute;
+top: calc(100% + 18px);
+left: -6%;
+width: 112%;
 flex-direction: column;
-gap: 12px;
+background-color: var(--white-bg);
+box-shadow: 0 15px 30px rgba(45, 26, 16, 0.1);
+padding: 10px 0;
+}
+.nav-links.open {
+display: flex;
 }
 .nav-links li {
-margin: 0 12px;
+margin: 0;
+text-align: center;
+}
+.nav-links a {
+display: block;
+padding: 14px 20px;
 }
 .hero h1 {
 font-size: 2.4rem;
@@ -546,7 +616,10 @@ margin: 10px 0;
 <nav class="navbar">
 <div class="container">
 <a href="#" class="logo">Pénzügyek Emberi Nyelven</a>
-<ul class="nav-links">
+<button class="nav-toggle" id="nav-toggle" aria-label="Menü megnyitása" aria-expanded="false">
+<span></span><span></span><span></span>
+</button>
+<ul class="nav-links" id="nav-links">
 <li><a href="#rolam">Miért én?</a></li>
 <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
 <li><a href="#miert-dijmentes">Miért díjmentes?</a></li>
@@ -809,6 +882,24 @@ margin: 10px 0;
 
 <!-- INTERAKTÍV JAVASCRIPT A LENYÍLÓS MODULHOZ -->
 <script>
+// MOBIL HAMBURGER MENÜ
+const navToggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+
+navToggle.addEventListener('click', function() {
+const isOpen = navLinks.classList.toggle('open');
+navToggle.classList.toggle('open');
+navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+navLinks.querySelectorAll('a').forEach(function(link) {
+link.addEventListener('click', function() {
+navLinks.classList.remove('open');
+navToggle.classList.remove('open');
+navToggle.setAttribute('aria-expanded', 'false');
+});
+});
+
 function toggleService(card) {
 const allCards = document.querySelectorAll('.service-card');
 const isActive = card.classList.contains('active');
