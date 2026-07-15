@@ -51,7 +51,7 @@
 <header class="quiz-header">
 <div class="container">
 <h1>Milyen típusú megtakarító vagy?</h1>
-<p>Válaszolj 6 rövid kérdésre, és megtudod, melyik pénzügyi típusra hasonlítasz leginkább - és mi lehetne a következő jó lépésed.</p>
+<p>Válaszolj 10 rövid kérdésre, és megtudod, melyik pénzügyi típusra hasonlítasz leginkább - és mi lehetne a következő jó lépésed.</p>
 </div>
 </header>
 
@@ -166,55 +166,91 @@ const quizQuestions = [
 {
 text: "Ha most kapnál egy váratlan 500 000 Ft-ot, mit tennél vele elsőként?",
 options: [
-{ text: "Félreteszem egy vésztartalékba, biztos, ami biztos.", type: "A" },
-{ text: "A nagy célomra teszem félre (pl. lakás, esküvő, vállalkozás).", type: "B" },
-{ text: "A családom biztonságára fordítanám, pl. biztosításra.", type: "C" },
-{ text: "Passzívan a számlámon maradna, mert nem tudom, hova kéne tennem.", type: "D" }
+{ text: "🌱 Félreteszem vésztartalékba", type: "A" },
+{ text: "🏡 A nagy célomra teszem félre", type: "B" },
+{ text: "👨‍👩‍👧 Családi biztosításra fordítom", type: "C" },
+{ text: "🧩 Nem tudnám, hova tegyem", type: "D" }
 ]
 },
 {
-text: "Hogyan írnád le most a pénzügyeidet egy mondatban?",
+text: "Hogyan írnád le most a pénzügyeidet?",
 options: [
-{ text: "Még csak most kezdek igazán tudatosan gondolkodni róla.", type: "A" },
-{ text: "Van egy konkrét célom, és tudatosan haladok felé.", type: "B" },
-{ text: "Mindent a családom, a szeretteim szemszögéből nézek.", type: "C" },
-{ text: "Sok mindenem van, de nincs átfogó rendszerem, kicsit kaotikus.", type: "D" }
+{ text: "🌱 Még csak most kezdem", type: "A" },
+{ text: "🏡 Van egy konkrét célom", type: "B" },
+{ text: "👨‍👩‍👧 Mindent a családom szemével nézek", type: "C" },
+{ text: "🧩 Kaotikus, nincs átfogó rendszerem", type: "D" }
 ]
 },
 {
 text: "Mi jut eszedbe elsőre a „pénzügyi biztonság” kifejezésről?",
 options: [
-{ text: "Hogy legyen egy alap, amire később építkezni tudok.", type: "A" },
-{ text: "Hogy elérjem azt, amit régóta szeretnék.", type: "B" },
-{ text: "Hogy a családomnak semmi baja ne eshessen anyagilag.", type: "C" },
-{ text: "Hogy végre átlássam, mim van, és mire mennyi jut.", type: "D" }
+{ text: "🌱 Egy alap, amire építkezem", type: "A" },
+{ text: "🏡 Hogy elérjem, amit szeretnék", type: "B" },
+{ text: "👨‍👩‍👧 Hogy a családom védve legyen", type: "C" },
+{ text: "🧩 Hogy végre átlássam mindent", type: "D" }
 ]
 },
 {
 text: "Melyik mondat áll hozzád a legközelebb?",
 options: [
-{ text: "„Szeretnék tanulni, de nem tudom, hol kezdjem.”", type: "A" },
-{ text: "„Pontosan tudom, mit akarok, csak segítség kell hozzá.”", type: "B" },
-{ text: "„A családomért szinte bármit megteszek.”", type: "C" },
-{ text: "„Sok mindent elkezdtem már, de semmit nem fejeztem be igazán.”", type: "D" }
+{ text: "🌱 Tanulnék, de nem tudom, hol kezdjem", type: "A" },
+{ text: "🏡 Tudom mit akarok, segítség kell hozzá", type: "B" },
+{ text: "👨‍👩‍👧 A családomért bármit megteszek", type: "C" },
+{ text: "🧩 Sokba belekezdtem, semmit be nem fejeztem", type: "D" }
 ]
 },
 {
 text: "Mikor néztél utoljára át egy biztosítást, megtakarítást vagy hitelt?",
 options: [
-{ text: "Még soha, most lenne itt az ideje.", type: "A" },
-{ text: "Nemrég, mert egy konkrét célra aktívan gyűjtök.", type: "B" },
-{ text: "Amikor családi életeseményem volt, pl. gyerek vagy házasság.", type: "C" },
-{ text: "Régen, mert túl bonyolultnak érzem az egészet.", type: "D" }
+{ text: "🌱 Még soha", type: "A" },
+{ text: "🏡 Nemrég, célra gyűjtök", type: "B" },
+{ text: "👨‍👩‍👧 Családi életeseménykor", type: "C" },
+{ text: "🧩 Régen, túl bonyolult", type: "D" }
 ]
 },
 {
 text: "Mi motivál leginkább, amikor pénzügyi döntést hozol?",
 options: [
-{ text: "Hogy megértsem, hogyan is működik mindez.", type: "A" },
-{ text: "Hogy közelebb kerüljek a nagy célomhoz.", type: "B" },
-{ text: "Hogy a szeretteim biztonságban legyenek.", type: "C" },
-{ text: "Hogy végre rend és átláthatóság legyen a pénzemben.", type: "D" }
+{ text: "🌱 Hogy megértsem, hogyan működik", type: "A" },
+{ text: "🏡 Hogy elérjem a célom", type: "B" },
+{ text: "👨‍👩‍👧 Hogy szeretteim biztonságban legyenek", type: "C" },
+{ text: "🧩 Hogy végre rend legyen", type: "D" }
+]
+},
+{
+text: "Hogy állsz a vésztartalékkal és a befektetéseid védelmével?",
+options: [
+{ text: "🌱 Még nincs, ez lenne az első lépés", type: "A" },
+{ text: "🏡 Tudatosan építem egy célra", type: "B" },
+{ text: "👨‍👩‍👧 Biztonságos, garantált megoldást választok", type: "C" },
+{ text: "🧩 Van valamim, de nem tudom mennyire védett", type: "D" }
+]
+},
+{
+text: "Hogy állsz jelenleg a lakhatással?",
+options: [
+{ text: "🌱 Még nem volt saját ingatlanom", type: "A" },
+{ text: "🏡 Aktívan gyűjtök egy új otthonra", type: "B" },
+{ text: "👨‍👩‍👧 A családomért fontos a saját otthon", type: "C" },
+{ text: "🧩 Szeretnék, de nem tudom hol tartok", type: "D" }
+]
+},
+{
+text: "Mennyire vagy elégedett a jelenlegi bankszámláddal?",
+options: [
+{ text: "🌱 Sosem néztem még utána", type: "A" },
+{ text: "🏡 Tudatosan választottam a céljaimhoz", type: "B" },
+{ text: "👨‍👩‍👧 A családi költéshez igazítottam", type: "C" },
+{ text: "🧩 Fizetek érte, de nem hasonlítottam össze", type: "D" }
+]
+},
+{
+text: "Hogy állsz a gyerekek témájában pénzügyileg?",
+options: [
+{ text: "🌱 Még nincs gyerekem, nem terveztem", type: "A" },
+{ text: "🏡 Tervezek gyereket, készülök rá anyagilag", type: "B" },
+{ text: "👨‍👩‍👧 Aktívan gondoskodom a jövőjéről", type: "C" },
+{ text: "🧩 Van gyerekem, de nincs köré rendszer", type: "D" }
 ]
 }
 ];
@@ -268,7 +304,15 @@ q.options.forEach(function(opt) {
 const btn = document.createElement('button');
 btn.type = 'button';
 btn.className = 'quiz-option';
-btn.textContent = opt.text;
+const spaceIndex = opt.text.indexOf(' ');
+const iconSpan = document.createElement('span');
+iconSpan.className = 'quiz-option-icon';
+iconSpan.textContent = opt.text.slice(0, spaceIndex);
+const labelSpan = document.createElement('span');
+labelSpan.className = 'quiz-option-label';
+labelSpan.textContent = opt.text.slice(spaceIndex + 1);
+btn.appendChild(iconSpan);
+btn.appendChild(labelSpan);
 btn.addEventListener('click', function() {
 scores[opt.type]++;
 btn.classList.add('selected');
