@@ -712,6 +712,23 @@ transition: color 0.2s ease;
 color: var(--accent-gold);
 }
 
+.footer-social {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.footer-social a {
+font-size: 1.9rem;
+line-height: 1;
+text-decoration: none;
+transition: transform 0.2s ease;
+}
+
+.footer-social a:hover {
+transform: translateY(-3px);
+}
+
 .footer-legal {
 text-align: center;
 padding-top: 25px;
