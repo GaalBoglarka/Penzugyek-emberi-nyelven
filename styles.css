@@ -914,6 +914,14 @@ background-color: var(--primary-bg);
 border-radius: 14px;
 }
 
+.quiz-disclaimer {
+font-size: 0.85rem;
+font-style: italic;
+opacity: 0.6;
+margin-bottom: 28px;
+text-align: center;
+}
+
 .quiz-lead-intro {
 font-weight: 700;
 margin-bottom: 22px;
