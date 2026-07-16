@@ -110,7 +110,7 @@
 <h2>Jelentkezzen munkatársnak</h2>
 <p>Töltse ki az alábbi űrlapot, és hamarosan felveszem Önnel a kapcsolatot.</p>
 
-<form id="career-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+<form id="career-form" action="https://api.web3forms.com/submit" method="POST">
 <input type="hidden" name="access_key" value="3ff886d4-8d54-4756-86e4-f9f395a678a9">
 <input type="hidden" name="subject" value="Új karrier jelentkezés – Pénzügyek Emberi Nyelven">
 <input type="hidden" name="from_name" value="Pénzügyek Emberi Nyelven weboldal - Karrier">
@@ -131,10 +131,7 @@
 <input type="tel" id="career-phone" name="phone" placeholder="Pl. +36 30 123 4567" required>
 </div>
 
-<div class="form-group">
-<label for="career-resume">Önéletrajz feltöltése (PDF vagy Word, max 5 MB)</label>
-<input type="file" id="career-resume" name="attachment" accept=".pdf,.doc,.docx" required>
-</div>
+<p style="opacity: 0.8;">Önéletrajzát kérjük külön e-mailben küldje el a <a href="mailto:penzugyekemberinyelven@gmail.com">penzugyekemberinyelven@gmail.com</a> címre, a jelentkezés elküldése után.</p>
 
 <div class="checkbox-group">
 <input type="checkbox" id="career-aszf" name="aszf" required>
