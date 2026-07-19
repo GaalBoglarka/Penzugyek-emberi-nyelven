@@ -8,6 +8,12 @@ A legfrissebb bejegyzés van legfelül. Új fejlesztés után ide kerül egy bej
 
 ---
 
+## 2026-07-19 — Tartalompillér-váz a social media oldalakhoz
+Új fájl: `TARTALOMPILLEREK_2026.md`. Friss piackutatás (2026. május–július) alapján
+négy tartalompillér készült a Facebook/Instagram oldalhoz (banki ügyek, biztosítás,
+befektetés-megtakarítás, támogatások), pillérenként a leggyakoribb kérdésekkel és
+poszt-ötletekkel, plusz a "kész oldal" indulócsomag leírása.
+
 ## 2026-07-16 — Memóriarendszer és automatizált GitHub-mentés
 A Claude-munkakörnyezet rendszerezése: fejlesztési napló bevezetése (ez a fájl),
 automatikus commit/push munkafolyamat (GitHub CLI), session-átadó rendszer a hosszú
